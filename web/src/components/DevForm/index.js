@@ -33,7 +33,7 @@ function DevForm({ onSubmit }) {
       latitude,
       longitude
     });
-    
+
     setUser("");
     setTechs("");
   }
