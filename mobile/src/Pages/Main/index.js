@@ -75,8 +75,8 @@ export default function Main({ navigation }) {
               <Marker
                 key={dev._id}
                 coordinate={{
-                  latitude: dev.location.coordinates[0],
-                  longitude: dev.location.coordinates[1]
+                  longitude: dev.location.coordinates[0],
+                  latitude: dev.location.coordinates[1]
                 }}
               >
                 <Image style={styles.avatar} source={{ uri: dev.avatar_url }} />
@@ -97,13 +97,12 @@ export default function Main({ navigation }) {
       </MapView>
       <View style={styles.searchForm}>
         <TextInput
+          style={{ color: "#000" }}
           value={text}
           onChangeText={setText}
           style={styles.searchInput}
           placeholder="Buscar devs por tecnologias"
           placeholderTextColor="#999"
-          color="#000"
-          backgroundColor="#fff"
           autoCapitalize="words"
           autoCorrect={false}
         />
@@ -154,7 +153,8 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     height: 50,
-    color: "#fff",
+    color: "#333",
+    backgroundColor: "#fff",
     borderRadius: 25,
     paddingHorizontal: 20,
     fontSize: 16,

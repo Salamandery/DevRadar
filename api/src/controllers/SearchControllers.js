@@ -1,14 +1,12 @@
-//const axios = require("axios");
 const Dev = require("../models/Dev");
 const parseArrayAsString = require("../utils/parseStringAsArray");
 
 module.exports = {
   async index(req, res) {
     const { latitude, longitude, techs } = req.query;
-
     const techsArr = parseArrayAsString(techs);
 
-    const devs = Dev.find({
+    const devs = await Dev.find({
       techs: {
         $in: techsArr
       },
@@ -22,7 +20,7 @@ module.exports = {
         }
       }
     });
-    
-    return res.json(devs);
+
+    return res.json({devs: devs});
   }
 };
